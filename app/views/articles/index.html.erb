@@ -1,0 +1,26 @@
+
+<h1>All Articles</h1>
+
+<table>
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Method</th>
+    </tr>
+</thead>
+<tbody>
+    <%@article.each do |article|%>
+    <tr>
+        <th>Name<%= article.title%></th>
+        <th>Description <%= article.description%></th>
+        <th><%= link_to 'Delete', article_path(article.id), method: :delete %></th>
+    </tr>
+    <%end%>
+</tbody>
+</table>
+ <!--
+articles_path(article or article.id) - this gives id to delete particular article , 
+method: :delete -- path for show and delete is same to tell rails this is delete action need to 
+mention method : delete
+-->
