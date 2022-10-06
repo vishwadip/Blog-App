@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+    belongs_to :user
+
     validates :title, presence: true, length: {minimum:6, maximum:100} #to don'100 let save article in db without title
     validates :description, presence: true, length: {minimum:10, maximum:300} #length - for length validation
 end

@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
     def create
         #render plain:params[:article]  #render plains means - display on browser in plain format
         @article=Article.new(params.require(:article).permit(:title, :description))
+        @article.user=User.first
         #params.require(:article).permit(:title,:decription) - we need params.require to provide strong security - we are telling we require key article and permit title and description
         #render plain: @article - this will render object hashcode
         #render plain: @article.inspect - this will render all info of article object 
